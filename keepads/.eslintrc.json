@@ -23,7 +23,7 @@
         "react"
     ],
     "rules": {
-        "quotes": ["warn", "double"],
+        "quotes": [1, "double", "avoid-escape"],
         "import/extensions": ["off"]
     }
 }
