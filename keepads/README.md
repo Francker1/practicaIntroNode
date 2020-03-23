@@ -18,3 +18,11 @@ Para inicializar la base de datos
 ```shell
 **npm run install:db**
 ```
+
+## API Reference
+
+### Advertisements list
+
+GET /apiv1/ads
+
+Devuelve un json con anuncios guardados en la database

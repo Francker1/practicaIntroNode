@@ -23,6 +23,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
+/**
+ * API routes:
+ */
+app.use("/apiv1/ads", require("./routes/api/ads"));
+
+/**
+ * Website routes:
+ */
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 
