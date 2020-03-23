@@ -23,6 +23,7 @@
         "react"
     ],
     "rules": {
+        "semi": ["warn", "always"],
         "quotes": [1, "double", "avoid-escape"],
         "import/extensions": ["off"]
     }

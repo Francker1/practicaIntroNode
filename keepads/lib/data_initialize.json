@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Anuncio de prueba",
+        "type": "sell",
+        "price": 42,
+        "photo": "mifoto.jpg",
+        "tags": ["lifestyle", "work"]
+    },
+    {
+        "name": "Vendo papel higiénico",
+        "type": "buy",
+        "price": 215,
+        "photo": "mipapel.jpg",
+        "tags": ["lifestyle", "motor", "work"]
+    },
+    {
+        "name": "Compro algo, lo que sea",
+        "type": "sell",
+        "price": 0.5,
+        "photo": "mipapel.jpg",
+        "tags": ["lifestyle", "work"]
+    },
+    {
+        "name": "Vendo otra cosa",
+        "type": "buy",
+        "price": 50,
+        "photo": "miventa.jpg",
+        "tags": ["motor"]
+    }
+]

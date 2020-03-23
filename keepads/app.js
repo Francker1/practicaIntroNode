@@ -9,6 +9,9 @@ var usersRouter = require("./routes/users");
 
 var app = express();
 
+// connect to the database:
+require("./lib/connectDB");
+
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "html");
@@ -20,6 +23,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
+/**
+ * API routes:
+ */
+app.use("/apiv1/ads", require("./routes/api/ads"));
+
+/**
+ * Website routes:
+ */
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 

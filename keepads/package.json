@@ -5,9 +5,10 @@
   "scripts": {
     "start": "cross-env NODE_ENV=production node ./bin/www",
     "dev": "cross-env DEBUG=nodeapi:* NODE_ENV=development nodemon ./bin/www",
+    "install:db": "node install_db.js",
     "init:lint": "./node_modules/.bin/eslint --init",
-    "fix:lint": "./node_modules/.bin/eslint *.js --fix",
-    "lint": "./node_modules/.bin/eslint *.js"
+    "fix:lint": "./node_modules/.bin/eslint **/*.js --fix",
+    "lint": "./node_modules/.bin/eslint **/*.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -16,6 +17,8 @@
     "ejs": "~2.6.1",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
+    "mongodb": "^3.5.5",
+    "mongoose": "^5.9.5",
     "morgan": "~1.9.1",
     "nodemon": "^2.0.2"
   },
