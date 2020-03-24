@@ -26,3 +26,32 @@ Para inicializar la base de datos
 GET /apiv1/ads
 
 Devuelve un json con anuncios guardados en la database
+
+ejemplo de respuesta:
+[
+    {
+        "tags": [
+        "lifestyle",
+        "work"
+        ],
+        "_id": "5e790e329f2ef94384e90c73",
+        "name": "Anuncio de prueba",
+        "type": "sell",
+        "price": 42,
+        "photo": "mifoto.jpg",
+        "__v": 0
+    },
+    {
+        "tags": [
+        "lifestyle",
+        "motor",
+        "work"
+        ],
+        "_id": "5e790e329f2ef94384e90c74",
+        "name": "Vendo papel higiénico",
+        "type": "buy",
+        "price": 215,
+        "photo": "mipapel.jpg",
+        "__v": 0
+    }
+]
