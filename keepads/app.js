@@ -41,13 +41,35 @@ app.use(function(req, res, next) {
 
 // error handler
 app.use(function(err, req, res, next) {
+  
+  if(err.array){
+    err.status = 422;
+    const errInfo = err.array({ onlyFirstError: true })[0];
+    err.message = isAPIUrl(req) ? { message: "Not valid", errors: err.mapped() } : `Param ${errInfo.param}, error: ${errInfo.msg}`;
+  }
+
+  //status code
+  res.status(err.status || 500);
+
+  //Error API url
+  if(isAPIUrl(req)){
+    res.json({
+      error: err.message
+    });
+    return;
+  }
+
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get("env") === "development" ? err : {};
 
   // render the error page
-  res.status(err.status || 500);
   res.render("error");
 });
+
+/** 
+ * control if the API url starts with /apiv1/
+ * */
+const isAPIUrl = req => req.originalUrl.startsWith("/apiv1/");
 
 module.exports = app;
