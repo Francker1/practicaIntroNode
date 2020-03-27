@@ -98,4 +98,22 @@ router.put("/:id", async (req, res, next) => {
 });
 
 
+/**
+ * DELETE /apiv1/ads/:id
+ * Delete an announcement by ID
+ */
+router.delete("/:id", async (req, res, next) => {
+
+    try{
+
+        const _id = req.params.id;
+        await Advertisement.deleteOne({ _id });
+        res.json();
+    } catch(err){
+        
+        next(err);
+    }
+})
+
+
 module.exports = router;
