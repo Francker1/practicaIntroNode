@@ -15,7 +15,17 @@ router.get("/", async (req, res, next) => {
     
     try{
 
-        const ads = await Advertisement.find();
+        // filter const:
+        const name = req.query.name;
+        const type = req.query.type;
+
+        const filters = {};
+
+        if (typeof name !== 'undefined') filters.name = new RegExp(name, 'i');
+        if (typeof type !== 'undefined') filters.type = type;
+
+        // list by filters:
+        const ads = await Advertisement.list( filters );
         res.json(ads);
     }catch(err){
 

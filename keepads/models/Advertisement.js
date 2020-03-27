@@ -15,6 +15,12 @@ const adSchema = mongoose.Schema({
     created: Date,
 });
 
+
+adSchema.statics.list = function (filter){
+
+    return Advertisement.find(filter);
+}
+
 /**
  * create model
  * mongoose.model("name singular of collection in bd", schema);
