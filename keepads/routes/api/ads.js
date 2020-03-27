@@ -25,6 +25,10 @@ router.get("/", async (req, res, next) => {
 });
 
 
+/**
+ * GET /apiv1/ads/:id
+ * Returns announcement by id
+ */
 router.get("/:id", async (req, res, next) => {
 
     try{
@@ -44,6 +48,53 @@ router.get("/:id", async (req, res, next) => {
         next(err);
     }
 
+});
+
+
+/**
+ * POST /apiv1/ads/
+ * Create an announcement
+ */
+router.post("/", async (req, res, next) => {
+
+    try{
+
+        const adDataCreate = req.body;
+        const ad = new Advertisement(adDataCreate);
+
+        //save in BD
+        const adSaved = await ad.save();
+
+        //if is ok, response code 201 - created
+        res.status(201).json(adSaved);
+    }catch(err){
+
+        next(err);
+    }
+});
+
+
+/**
+ * PUT /apiv1/ads/:id
+ * Update an announcement by ID
+ */
+router.put("/:id", async (req, res, next) => {
+
+    try{
+
+        const _id = req.params.id;
+        const adDataUpdate = req.body;
+
+        const adUpdated = await Advertisement.findOneAndUpdate( 
+            { _id }, 
+            adDataUpdate, 
+            { new: true, useFindAndModify: false } 
+        );
+        res.status(200).json(adUpdated);
+    } catch(err){
+
+        next(err);
+    }
 });
 
 

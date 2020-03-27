@@ -21,6 +21,7 @@ Para inicializar la base de datos
 
 ## API Reference
 
+
 ### Advertisements list
 
 GET /apiv1/ads
@@ -55,3 +56,49 @@ ejemplo de respuesta:
         "__v": 0
     }
 ]
+
+
+### Get Advertisement by ID
+
+GET /apiv1/ads/:id
+
+Devuelve un json con un anuncio filtrado por ID de anuncio. 
+
+En caso de error, devolverá status 404 y mensaje de error:
+
+{
+"error": "Ad Not found"
+}
+
+
+### Create Advertisement
+
+POST /apiv1/ads/
+
+Crea un anuncio con el siguiente modelo de datos
+
+{
+    name: String,
+    type: String,
+    price: Number,
+    photo: String,
+    tags: [String],
+    created: Date,
+}
+
+
+
+### Update Advertisement by ID
+
+PUT /apiv1/ads/:id
+
+Actualiza un anuncio buscado por ID con el siguiente modelo de datos
+
+{
+    name: String,
+    type: String,
+    price: Number,
+    photo: String,
+    tags: [String],
+    created: Date,
+}
