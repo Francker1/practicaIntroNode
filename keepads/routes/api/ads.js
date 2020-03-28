@@ -18,14 +18,19 @@ router.get("/", async (req, res, next) => {
         // filter const:
         const name = req.query.name;
         const type = req.query.type;
+        const tag = req.query.tag;
+        const limit = parseInt( req.query.limit || 15 );
+        const skip = parseInt( req.query.skip );
+        const sort = req.query.sort;
 
         const filters = {};
 
         if (typeof name !== 'undefined') filters.name = new RegExp(name, 'i');
         if (typeof type !== 'undefined') filters.type = type;
+        if (typeof tag  !== 'undefined') filters.tags = tag;
 
         // list by filters:
-        const ads = await Advertisement.list( filters );
+        const ads = await Advertisement.list( filters, limit, skip, sort );
         res.json(ads);
     }catch(err){
 

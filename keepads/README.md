@@ -26,9 +26,42 @@ Para inicializar la base de datos
 
 GET /apiv1/ads
 
-Devuelve un json con anuncios guardados en la database
+Devuelve un json con anuncios guardados en la database, primero está limitado a 5 resultados para no sobrecargar la petición
 
-ejemplo de respuesta:
+*filters:*
+
+GET /apiv1/ads?name=**name**
+
+Devuelve json con los resultados filtrados que contengan dicha cadena
+
+
+GET /apiv1/ads?type=**type**
+
+Devuelve json con los resultados filtrados dependiendo si son de venta o de compra. Parámetros de entrada: *sell* or *buy*
+
+
+GET /apiv1/ads?tag=**tag**
+
+Devuelve json con los resultados filtrados por etiqueta.
+
+
+GET /apiv1/ads?limit=**limit**
+
+Devuelve json con los resultados limitados por el parámetro: limit type number
+
+
+GET /apiv1/ads?skip=**skip**
+
+Devuelve json con los resultados paginados por el parámetro: skip type number. Muestra los resultados a partir del número del parámetro
+
+
+GET /apiv1/ads?sort=**sort**
+
+Devuelve json con los resultados ordenados por campo. Acepta dos campos en el mismo parámetro. Ejemplo: ?sort=price%20name
+
+
+**ejemplo de respuesta:**
+
 [
     {
         "tags": [
@@ -57,12 +90,16 @@ ejemplo de respuesta:
     }
 ]
 
+Result ok status: 200
+
 
 ### Get Advertisement by ID
 
 GET /apiv1/ads/:id
 
 Devuelve un json con un anuncio filtrado por ID de anuncio. 
+
+Result ok status: 200
 
 En caso de error, devolverá status 404 y mensaje de error:
 
@@ -86,7 +123,7 @@ Crea un anuncio con el siguiente modelo de datos
     created: Date,
 }
 
-
+Result ok status: 201
 
 ### Update Advertisement by ID
 
@@ -102,3 +139,14 @@ Actualiza un anuncio buscado por ID con el siguiente modelo de datos
     tags: [String],
     created: Date,
 }
+
+Result ok status: 200
+
+
+### Delete Advertisement by ID
+
+DELETE /apiv1/ads/:id
+
+Elimina un anuncio buscado por ID en la base de datos
+
+Result ok status: 200

@@ -16,9 +16,15 @@ const adSchema = mongoose.Schema({
 });
 
 
-adSchema.statics.list = function (filter){
+adSchema.statics.list = function (filter, limit, skip, sort){
 
-    return Advertisement.find(filter);
+    const query = Advertisement.find(filter);
+    query.limit(limit);
+    query.skip(skip);
+    query.sort(sort);
+    
+    //execute query
+    return query.exec();
 }
 
 /**
