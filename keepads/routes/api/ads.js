@@ -22,6 +22,7 @@ router.get("/", async (req, res, next) => {
         const limit = parseInt( req.query.limit || 15 );
         const skip = parseInt( req.query.skip );
         const sort = req.query.sort;
+        const fields = req.query.fields || "-__v";
 
         const filters = {};
 
@@ -30,7 +31,7 @@ router.get("/", async (req, res, next) => {
         if (typeof tag  !== 'undefined') filters.tags = tag;
 
         // list by filters:
-        const ads = await Advertisement.list( filters, limit, skip, sort );
+        const ads = await Advertisement.list( filters, limit, skip, sort, fields );
         res.json(ads);
     }catch(err){
 

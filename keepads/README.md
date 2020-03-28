@@ -26,7 +26,7 @@ Para inicializar la base de datos
 
 GET /apiv1/ads
 
-Devuelve un json con anuncios guardados en la database, primero está limitado a 5 resultados para no sobrecargar la petición
+Devuelve un json con anuncios guardados en la database, primero está limitado a 15 resultados para no sobrecargar la petición
 
 *filters:*
 
@@ -60,6 +60,10 @@ GET /apiv1/ads?sort=**sort**
 Devuelve json con los resultados ordenados por campo. Acepta dos campos en el mismo parámetro. Ejemplo: ?sort=price%20name
 
 
+GET /apiv1/ads?fields=**field1** **field2** **field3**
+
+Devuelve json con los resultados y especificando los campos a devolver. Por defecto se excluye el campo "__v"
+
 **ejemplo de respuesta:**
 
 [
@@ -73,7 +77,6 @@ Devuelve json con los resultados ordenados por campo. Acepta dos campos en el mi
         "type": "sell",
         "price": 42,
         "photo": "mifoto.jpg",
-        "__v": 0
     },
     {
         "tags": [
@@ -82,11 +85,10 @@ Devuelve json con los resultados ordenados por campo. Acepta dos campos en el mi
         "work"
         ],
         "_id": "5e790e329f2ef94384e90c74",
-        "name": "Vendo papel higiénico",
+        "name": "Vendo otra cosa",
         "type": "buy",
         "price": 215,
-        "photo": "mipapel.jpg",
-        "__v": 0
+        "photo": "miventa.jpg",
     }
 ]
 
