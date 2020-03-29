@@ -152,3 +152,8 @@ DELETE /apiv1/ads/:id
 Elimina un anuncio buscado por ID en la base de datos
 
 Result ok status: 200
+
+
+## Example URL
+
+http://localhost:3000/apiv1/ads?skip=1&limit=3&sort=price&tag=lifestyle
