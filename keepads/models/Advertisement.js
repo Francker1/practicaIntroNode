@@ -15,6 +15,19 @@ const adSchema = mongoose.Schema({
     created: Date,
 });
 
+
+adSchema.statics.list = function (filter, limit, skip, sort, fields){
+
+    const query = Advertisement.find(filter);
+    query.limit(limit);
+    query.skip(skip);
+    query.sort(sort);
+    query.select(fields)
+
+    //execute query
+    return query.exec();
+}
+
 /**
  * create model
  * mongoose.model("name singular of collection in bd", schema);
