@@ -3,6 +3,9 @@
 const express = require("express");
 const router = express.Router();
 
+const helperJS = require("../../public/javascripts/helper");
+
+
 /**load ads model */
 const Advertisement = require("../../models/Advertisement");
 
@@ -23,12 +26,16 @@ router.get("/", async (req, res, next) => {
         const skip = parseInt( req.query.skip );
         const sort = req.query.sort;
         const fields = req.query.fields || "-__v";
-
+        const price = req.query.price;
+        
+        
+        //filters
         const filters = {};
 
-        if (typeof name !== 'undefined') filters.name = new RegExp(name, 'i');
-        if (typeof type !== 'undefined') filters.type = type;
-        if (typeof tag  !== 'undefined') filters.tags = tag;
+        if (typeof name     !== 'undefined') filters.name   = new RegExp("^"+name, 'i');
+        if (typeof type     !== 'undefined') filters.type   = type;
+        if (typeof tag      !== 'undefined') filters.tags   = tag;
+        if (typeof price    !== 'undefined') filters.price  = helperJS.getFilterPricing(price);
 
         // list by filters:
         const ads = await Advertisement.list( filters, limit, skip, sort, fields );
@@ -78,6 +85,7 @@ router.post("/", async (req, res, next) => {
         const adDataCreate = req.body;
         const ad = new Advertisement(adDataCreate);
 
+        console.log(adDataCreate.tags);
         //save in BD
         const adSaved = await ad.save();
 
