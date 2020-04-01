@@ -154,6 +154,25 @@ Elimina un anuncio buscado por ID en la base de datos
 Result ok status: 200
 
 
-## Example URL
+### Examples URL
 
+http://localhost:3000/apiv1/ads?name=bici
 http://localhost:3000/apiv1/ads?skip=1&limit=3&sort=price&tag=lifestyle
+http://localhost:3000/apiv1/ads?price=25-150&sort=price
+
+
+
+## Get list of tags
+
+GET /apiv1/tags
+
+Devuelve una lista en formato json con los posibles tags creados
+
+{
+    "tags": [
+        "lifestyle",
+        "work",
+        "motor",
+        "mobile"
+    ]
+}

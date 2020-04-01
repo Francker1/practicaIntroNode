@@ -3,23 +3,25 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/", (req, res, next) => {
+/**load ads model */
+const Advertisement = require("../../models/Advertisement");
+
+
+/**
+ * GET /apiv1/tags/
+ * Returns list of tags
+ */
+
+router.get("/", async (req, res, next) => {
     
- 
-    //const ads = await Advertisement.list( filters, limit, skip, sort, fields );
-    res.json({
-        "success": true,
-        "count": 4,
-        "results": [
-          "lifestyle",
-          "mobile",
-          "motor",
-          "work"
-        ]
-      });
+  try{
 
+    const tags = await Advertisement.distinct("tags");
+    res.json({tags: tags});
+  }catch(err){
 
+    next(err);
+  }
 });
-
 
 module.exports = router;
