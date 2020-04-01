@@ -1,44 +1,44 @@
 [
     {
-        "name": "Anuncio de prueba",
-        "type": "sell",
+        "name": "Un móvil de última generación",
+        "type": "buy",
         "price": 42,
-        "photo": "mifoto.jpg",
+        "photo": "mobile.jpg",
         "tags": ["lifestyle", "work"]
     },
     {
-        "name": "Vendo papel higiénico",
-        "type": "buy",
+        "name": "Vendo un ordenador de hace tiempo",
+        "type": "sell",
         "price": 215,
-        "photo": "mipapel.jpg",
+        "photo": "work.jpg",
         "tags": ["lifestyle", "motor", "work"]
     },
     {
         "name": "Compro algo, lo que sea",
         "type": "sell",
         "price": 0.5,
-        "photo": "mipapel.jpg",
+        "photo": "lifestyle.jpg",
         "tags": ["lifestyle", "work"]
     },
     {
-        "name": "Vendo otra cosa",
+        "name": "Moto custom",
         "type": "buy",
-        "price": 50,
-        "photo": "miventa.jpg",
+        "price": 1457,
+        "photo": "motor.jpg",
         "tags": ["motor"]
     },
     {
         "name": "Bicicleta de carreras",
         "type": "buy",
         "price": 150,
-        "photo": "unafotodebicicarrera.png",
+        "photo": "bicycle.jpg",
         "tags": ["motor", "lifestyle"]
     },
     {
         "name": "Bicicleta de montaña",
         "type": "sell",
-        "price": 240,
-        "photo": "unafotodebici.png",
+        "price": 25,
+        "photo": "bicycle.jpg",
         "tags": ["motor", "lifestyle"]
     }
 ]
