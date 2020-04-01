@@ -26,5 +26,19 @@
         "price": 50,
         "photo": "miventa.jpg",
         "tags": ["motor"]
+    },
+    {
+        "name": "Bicicleta de carreras",
+        "type": "buy",
+        "price": 150,
+        "photo": "unafotodebicicarrera.png",
+        "tags": ["motor", "lifestyle"]
+    },
+    {
+        "name": "Bicicleta de montaña",
+        "type": "sell",
+        "price": 240,
+        "photo": "unafotodebici.png",
+        "tags": ["motor", "lifestyle"]
     }
 ]
