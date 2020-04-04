@@ -11,7 +11,10 @@ const adSchema = mongoose.Schema({
     type: String,
     price: Number,
     photo: String,
-    tags: [String],
+    tags: {
+        type: [String],
+        enum: ["motor", "lifestyle", "work", "mobile"]
+    },
     created: Date,
 });
 
