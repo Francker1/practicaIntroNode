@@ -7,21 +7,33 @@ import "./App.css";
 export default class App extends Component {
 
   constructor(props){
+
     super(props);
+
     this.state = {
-      ads: []
+      ads: [],
+      API_URL_BASE: "http://localhost:9000/apiv1/ads",
+      search: window.location.search,
     }
   }
 
-  componentDidMount() {
-    axios.get("http://localhost:9000/apiv1/ads")
+  callAPI(){
+
+    axios.get(`${this.state.API_URL_BASE}/${this.state.search}`)
       .then(res => {
 
         const ads = res.data;
         this.setState({ ads });
       }).catch(() => {
+        
         alert("Error to list advertisements, pleas try again");
       })
+
+  }
+
+  componentDidMount() {
+
+    this.callAPI();
   }
 
   render() {
@@ -33,9 +45,9 @@ export default class App extends Component {
         <Row>
             { ads.map(ad => 
             
-              <Col key={ad._id} className="col-12 col-sm-6 col-lg-4 mb-4">
+              <Col key={ad._id} className="col-12 col-sm-6 col-lg-4 mb-5">
             
-                <Card>
+                <Card className="card-ads">
                     <Card.Img className="img-card" variant="top" src={`http://localhost:9000/images/ads/${ad.photo}`} />
                     <Card.Body>
                         <Card.Title>{ad.name}</Card.Title>

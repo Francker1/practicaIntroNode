@@ -157,7 +157,7 @@ Result ok status: 200
 ### Examples URL
 
 http://localhost:3000/apiv1/ads?name=bici
-http://localhost:3000/apiv1/ads?skip=1&limit=3&sort=price&tag=lifestyle
+http://localhost:3000/apiv1/ads?sort=price&tag=lifestyle&skip=1&limit=3
 http://localhost:3000/apiv1/ads?price=25-150&sort=price
 
 

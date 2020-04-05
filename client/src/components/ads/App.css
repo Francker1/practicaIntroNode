@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+
+.card-ads {
+  height: 100%;
+  border: unset;
+  border-radius: 25px;
+  background: #efefef;
+  box-shadow:  24px 24px 48px #cecece, 
+               -24px -24px 48px #ffffff;
+}
+
+.card-ads .card-img-top{
+  border-radius: 25px 25px 0 0 ;
+}
+
+.card-ads .card-body{
+  display: grid;
+}
