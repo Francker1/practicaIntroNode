@@ -42,7 +42,7 @@ export default class App extends Component {
 
     return (
       <Container>
-        <Row>
+        <Row className="mt-5">
             { ads.map(ad => 
             
               <Col key={ad._id} className="col-12 col-sm-6 col-lg-4 mb-5">
