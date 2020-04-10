@@ -23,4 +23,4 @@ const initAds = async () => {
     
     await Ad.deleteMany();
     await Ad.insertMany(dataInit);
-}
+};

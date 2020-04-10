@@ -35,4 +35,4 @@ exports.getFilterPricing = price => {
     }
 
     return filterPrice;
-}
+};

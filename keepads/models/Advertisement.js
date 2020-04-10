@@ -28,11 +28,11 @@ adSchema.statics.list = function (filter, limit, skip, sort, fields){
     query.limit(limit);
     query.skip(skip);
     query.sort(sort);
-    query.select(fields)
+    query.select(fields);
 
     //execute query
     return query.exec();
-}
+};
 
 /**
  * create model
