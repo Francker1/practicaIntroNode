@@ -19,6 +19,7 @@ npm install
 To initialize the database once and have ads the first time
 
 ```shell
+cd keepads
 npm run install:db
 ```
 
@@ -26,6 +27,7 @@ npm run install:db
 To start API system
 
 ```shell
+cd keepads
 npm run dev
 ```
 
@@ -45,6 +47,7 @@ npm install
 To start client frontend
 
 ```shell
+cd client
 npm start
 ```
 
