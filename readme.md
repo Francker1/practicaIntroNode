@@ -3,6 +3,8 @@
 ## Goal
 Build an API for advertisment buy/sell and create system filter in mongo DB. It is not the object of this practice to create a front with React.JS, but to practice, I have decided to include it.
 
+<br>
+
 # INSTRUCTIONS:
 
 ## 1. Start the API:
@@ -29,7 +31,7 @@ npm run dev
 
 In your browser go to http://localhost:9000/apiv1/ads and see json with advertisements
 
-
+<br>
 
 ## 2. Create React app
 Go to the client root at client/ and install packages from package.json:
@@ -234,3 +236,32 @@ Returns a list in json format with the possible tags created.
         "mobile"
     ]
 }
+
+<br>
+
+## ESLINT:
+
+I have included EsLint only for the API folder. If you want to eslint check the **.eslintrc.json** rules, you can do the following code: 
+
+```shell
+cd keepads
+npm run lint
+```
+
+This will show in the *shell* the places in the code that should be fixed depending on the **.eslintrc.json** rules. **To test it I have left the API index.js file unresolved**
+
+<br>
+
+For init a new **.eslintrc.json** in the project:
+
+```shell
+cd keepads
+npm run init:lint
+```
+
+To automatically fix files according to **.eslintrc.json** rules:
+
+```shell
+cd keepads
+npm run fix:lint
+```
