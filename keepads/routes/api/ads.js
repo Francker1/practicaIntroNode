@@ -24,7 +24,7 @@ router.get("/", async (req, res, next) => {
         const name = req.query.name;
         const type = req.query.type;
         const tag = req.query.tag;
-        const limit = parseInt( req.query.limit || 15 );
+        const limit = parseInt( req.query.limit || 150 );
         const skip = parseInt( req.query.skip );
         const sort = req.query.sort;
         const fields = req.query.fields || "-__v";
@@ -86,7 +86,6 @@ router.post("/", upload.single("photo"), async (req, res, next) => {
         const adDataCreate = req.body;
         const ad = new Advertisement(adDataCreate);
 
-        console.log(adDataCreate.tags);
         //save in BD
         const adSaved = await ad.save();
 

@@ -7,16 +7,19 @@ const mongoose = require("mongoose");
  */
 
 const adSchema = mongoose.Schema({
-    name: String,
-    type: String,
-    price: Number,
-    photo: String,
-    tags: {
-        type: [String],
-        enum: ["motor", "lifestyle", "work", "mobile"]
+        name: String,
+        type: String,
+        price: Number,
+        photo: String,
+        tags: {
+            type: [String],
+            enum: ["motor", "lifestyle", "work", "mobile"]
+        }
     },
-    created: Date,
-});
+    {
+        timestamps: true
+    }
+);
 
 
 adSchema.statics.list = function (filter, limit, skip, sort, fields){

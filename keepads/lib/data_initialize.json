@@ -1,44 +1,147 @@
 [
     {
-        "name": "Un móvil de última generación",
-        "type": "buy",
-        "price": 42,
-        "photo": "mobile.jpg",
-        "tags": ["lifestyle", "work"]
+        "tags": [
+            "lifestyle",
+            "work"
+        ],
+        "name" : "Un anuncio actualizado 3",
+        "type" : "sell",
+        "price": 24,
+        "photo": "work.jpg"
     },
     {
-        "name": "Vendo un ordenador de hace tiempo",
-        "type": "sell",
-        "price": 215,
-        "photo": "work.jpg",
-        "tags": ["lifestyle", "motor", "work"]
+        "tags": [
+            "motor"
+        ],
+        "name" : "Vendo otra cosa",
+        "type" : "buy",
+        "price": 25,
+        "photo": "lifestyle.jpg"
     },
     {
-        "name": "Compro algo, lo que sea",
-        "type": "sell",
-        "price": 0.5,
-        "photo": "lifestyle.jpg",
-        "tags": ["lifestyle", "work"]
+        "tags": [
+            "motor",
+            "lifestyle"
+        ],
+        "name" : "Un anuncio nuevo",
+        "type" : "buy",
+        "price": 25,
+        "photo": "mobile.jpg"
     },
     {
-        "name": "Moto custom",
-        "type": "buy",
-        "price": 1457,
-        "photo": "motor.jpg",
-        "tags": ["motor"]
+        "tags": [
+            "motor"
+        ],
+        "name" : "Un anuncio con un tag",
+        "type" : "sell",
+        "price": 49,
+        "photo": "motor.jpg"
     },
     {
-        "name": "Bicicleta de carreras",
-        "type": "buy",
+        "tags": [
+            "motor",
+            "lifestyle"
+        ],
+        "type" : "buy",
         "price": 150,
         "photo": "bicycle.jpg",
-        "tags": ["motor", "lifestyle"]
+        "name" : "Bicicleta de carreras"
     },
     {
-        "name": "Bicicleta de montaña",
-        "type": "sell",
-        "price": 25,
-        "photo": "bicycle.jpg",
-        "tags": ["motor", "lifestyle"]
+        "tags": [
+            "motor",
+            "lifestyle"
+        ],
+        "name" : "Bicicleta de montaña",
+        "type" : "sell",
+        "price": 240,
+        "photo": "bicycle.jpg"
+    },
+    {
+        "tags": [
+            "motor"
+        ],
+        "name" : "Motor de avioneta",
+        "type" : "sell",
+        "price": 754,
+        "photo": "motor.jpg"
+    },
+    {
+        "tags": [
+            "lifestyle"
+        ],
+        "name" : "Viaje a la India",
+        "type" : "buy",
+        "price": 78,
+        "photo": "lifestyle.jpg"
+    },
+    {
+        "tags": [
+            "work",
+            "motor"
+        ],
+        "name" : "Ratón de escritorio",
+        "type" : "buy",
+        "price": 9.5,
+        "photo": "work.jpg"
+    },
+    {
+        "tags": [
+            "mobile",
+            "lifestyle",
+            "work"
+        ],
+        "name" : "Móvil usado",
+        "type" : "sell",
+        "price": 47.25,
+        "photo": "mobile.jpg"
+    },
+    {
+        "tags": [
+            "work",
+            "lifestyle"
+        ],
+        "name"   : "Silla escritorio",
+        "type"   : "sell",
+        "price"  : 67,
+        "photo"  : "work.jpg"
+    },
+    {
+        "tags": [
+            "work"
+        ],
+        "name" : "Silla escritorio",
+        "type" : "sell",
+        "price": 67,
+        "photo": "work.jpg"
+    },
+    {
+        "tags": [
+            "work",
+            "lifestyle",
+            "motor"
+        ],
+        "name" : "Silla escritorio",
+        "type" : "sell",
+        "price": 67,
+        "photo": "work.jpg"
+    },
+    {
+        "tags": [
+            "mobile"
+        ],
+        "name"   : "Móvil usado",
+        "type"   : "sell",
+        "price"  : 145.5,
+        "photo"  : "mobile.jpg"
+    },
+    {
+        "tags": [
+            "lifestyle"
+        ],
+        "name"   : "Botella de agua",
+        "type"   : "buy",
+        "price"  : 1.57,
+        "photo"  : "lifestyle.jpg"
     }
 ]
