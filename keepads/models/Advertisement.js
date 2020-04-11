@@ -7,9 +7,18 @@ const mongoose = require("mongoose");
  */
 
 const adSchema = mongoose.Schema({
-        name: String,
-        type: String,
-        price: Number,
+        name: {
+            type: String,
+            required: [true, "Name is required"]
+        },
+        type: {
+            type: String,
+            required: [true, "Hey! You buy or sell?"]
+        },
+        price: {
+            type: Number,
+            required: true
+        },
         photo: String,
         tags: {
             type: [String],
