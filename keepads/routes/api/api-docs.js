@@ -23,7 +23,7 @@ const swaggerOptions = {
     },
     basePath: "/",
     apis: ["./routes/api/ads.js"]
-}
+};
 
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
 app.use("/", swaggerUI.serve, swaggerUI.setup(swaggerDocs));
