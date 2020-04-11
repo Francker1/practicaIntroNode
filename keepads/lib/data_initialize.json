@@ -35,7 +35,7 @@
         "name" : "Un anuncio con un tag",
         "type" : "sell",
         "price": 49,
-        "photo": ""
+        "photo": "test_image.jpg"
     },
     {
         "tags": [
@@ -94,7 +94,7 @@
         "name" : "Móvil usado",
         "type" : "sell",
         "price": 47.25,
-        "photo": ""
+        "photo": "test_image.jpg"
     },
     {
         "tags": [
@@ -124,7 +124,7 @@
         "name" : "Silla escritorio",
         "type" : "sell",
         "price": 67,
-        "photo": ""
+        "photo": "test_image.jpg"
     },
     {
         "tags": [
