@@ -3,7 +3,7 @@
 const express = require("express");
 const router = express.Router();
 const multer = require("multer");
-const upload = multer({ dest: "../../public/images/ads/" })
+const upload = multer({ dest: "./public/images/ads/" })
 
 const helperJS = require("../../public/javascripts/helper");
 
@@ -157,7 +157,7 @@ router.post("/", upload.single("photo"), async (req, res, next) => {
  *               $ref: '#/definitions/Advertisement'
  *      responses:
  *       200:
- *         description: Created!
+ *         description: Updated!
  */
 router.put("/:id", async (req, res, next) => {
 
