@@ -266,3 +266,9 @@ To automatically fix files according to **.eslintrc.json** rules:
 cd keepads
 npm run fix:lint
 ```
+
+<br>
+
+## SWAGGER:
+
+To see API documentation in path using Swagger Openapi documentation, go to http://localhost:9000/api-docs/ and enjoy!

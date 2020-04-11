@@ -122,9 +122,10 @@ router.post("/", upload.single("photo"), async (req, res, next) => {
     try{
 
         const adDataCreate = req.body;
+        adDataCreate.photo = adDataCreate.photo ? adDataCreate.photo : "test_image.jpg";
+
         const ad = new Advertisement(adDataCreate);
 
-        console.log(adDataCreate.tags);
         //save in BD
         const adSaved = await ad.save();
 
