@@ -164,7 +164,7 @@ In case of error it will return status 404 and error message:
 
 POST /apiv1/ads/
 
-Create an advertisement with the following data model. For testing, the field created gets this format: "YYYY-DD-MM". On the other hand, the *tags* are limited to 4 specifically, if not, it returns an error.
+Create an advertisement with the following data model. On the other hand, the *tags* are limited to 4 specifically, if not, it returns an error.
 <br>
 For the photo, I have uploaded 5 test images and you only need to add the file name and its extension
 <br>
@@ -177,7 +177,6 @@ Data model:
     price: Number,
     photo: String,
     tags: [String],
-    created: Date,
 }
 
 <br>
@@ -198,7 +197,6 @@ Update an advertisement searched by ID with the following data model.
     price: Number,
     photo: String,
     tags: [String],
-    created: Date,
 }
 
 <br>

@@ -3,7 +3,8 @@
 const express = require("express");
 const router = express.Router();
 const multer = require("multer");
-const upload = multer({ dest: "../../public/images/ads/" });
+const upload = multer({ dest: "../../public/images/ads/" })
+
 const helperJS = require("../../public/javascripts/helper");
 
 
@@ -11,10 +12,18 @@ const helperJS = require("../../public/javascripts/helper");
 const Advertisement = require("../../models/Advertisement");
 
 /**
- * GET /apiv1/ads/
- * Returns list of announcements
- */
-
+* @swagger
+* /apiv1/ads:
+*  get:
+*      description: Use to request all advertisements created
+*      produces:
+*         - application/json
+*      responses:
+*       200:
+*         description: Advertisements
+*         schema:
+*         type: json
+*/
 router.get("/", async (req, res, next) => {
     
     try{
@@ -48,10 +57,24 @@ router.get("/", async (req, res, next) => {
 });
 
 
+
 /**
- * GET /apiv1/ads/:id
- * Returns announcement by id
- */
+* @swagger
+* /apiv1/ads/{id}:
+*  get:
+*      summary: Use to request an advertisements by ID
+*      produces:
+*         - application/json
+*      parameters:
+*         - in: path
+*           name: id
+*           description: ID of advertisement
+*      responses:
+*       200:
+*         description: Advertisement by ID
+*         schema:
+*         type: json
+*/
 router.get("/:id", async (req, res, next) => {
 
     try{
@@ -85,6 +108,7 @@ router.post("/", upload.single("photo"), async (req, res, next) => {
         const adDataCreate = req.body;
         const ad = new Advertisement(adDataCreate);
 
+        console.log(adDataCreate.tags);
         //save in BD
         const adSaved = await ad.save();
 
@@ -136,6 +160,7 @@ router.delete("/:id", async (req, res, next) => {
         
         next(err);
     }
-});
+})
+
 
 module.exports = router;
