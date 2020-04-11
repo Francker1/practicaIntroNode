@@ -3,7 +3,8 @@
 const express = require("express");
 const router = express.Router();
 const multer = require("multer");
-const upload = multer({ dest: "../../public/images/ads/" });
+const upload = multer({ dest: "../../public/images/ads/" })
+
 const helperJS = require("../../public/javascripts/helper");
 
 
@@ -11,10 +12,19 @@ const helperJS = require("../../public/javascripts/helper");
 const Advertisement = require("../../models/Advertisement");
 
 /**
- * GET /apiv1/ads/
- * Returns list of announcements
+ * @swagger
+ * /apiv1/ads:
+ *  get:
+ *      summary: Get all Ads
+ *      description: Use to request all advertisements created
+ *      produces:
+ *         - application/json
+ *      responses:
+ *       200:
+ *         description: Advertisements
+ *         schema:
+ *         type: json
  */
-
 router.get("/", async (req, res, next) => {
     
     try{
@@ -48,9 +58,24 @@ router.get("/", async (req, res, next) => {
 });
 
 
+
 /**
- * GET /apiv1/ads/:id
- * Returns announcement by id
+ * @swagger
+ * /apiv1/ads/{id}:
+ *  get:
+ *      summary: Get Ad by ID
+ *      description: Use to request an advertisement by ID
+ *      produces:
+ *         - application/json
+ *      parameters:
+ *         - in: path
+ *           name: id
+ *           description: ID of advertisement
+ *      responses:
+ *       200:
+ *         description: Advertisement by ID
+ *         schema:
+ *         type: json
  */
 router.get("/:id", async (req, res, next) => {
 
@@ -75,8 +100,22 @@ router.get("/:id", async (req, res, next) => {
 
 
 /**
- * POST /apiv1/ads/
- * Create an announcement
+ * @swagger
+ * /apiv1/ads:
+ *  post:
+ *      summary: Create Ad
+ *      description: Use this request to create a new advertisement
+ *      produces:
+ *         - application/json
+ *      parameters:
+ *         - in: body
+ *           name: ad info
+ *           description: The advertisement to create
+ *           schema:
+ *               $ref: '#/definitions/Advertisement'
+ *      responses:
+ *       201:
+ *         description: Created!
  */
 router.post("/", upload.single("photo"), async (req, res, next) => {
 
@@ -85,6 +124,7 @@ router.post("/", upload.single("photo"), async (req, res, next) => {
         const adDataCreate = req.body;
         const ad = new Advertisement(adDataCreate);
 
+        console.log(adDataCreate.tags);
         //save in BD
         const adSaved = await ad.save();
 
@@ -98,8 +138,25 @@ router.post("/", upload.single("photo"), async (req, res, next) => {
 
 
 /**
- * PUT /apiv1/ads/:id
- * Update an announcement by ID
+ * @swagger
+ * /apiv1/ads/{id}:
+ *  put:
+ *      summary: Update Ad by ID
+ *      description: Use this request to update an advertisement searched by ID
+ *      produces:
+ *         - application/json
+ *      parameters:
+ *         - in: path
+ *           name: id
+ *           description: ID of advertisement
+ *         - in: body
+ *           name: ad info
+ *           description: The advertisement data to update
+ *           schema:
+ *               $ref: '#/definitions/Advertisement'
+ *      responses:
+ *       200:
+ *         description: Created!
  */
 router.put("/:id", async (req, res, next) => {
 
@@ -122,8 +179,22 @@ router.put("/:id", async (req, res, next) => {
 
 
 /**
- * DELETE /apiv1/ads/:id
- * Delete an announcement by ID
+ * @swagger
+ * /apiv1/ads/{id}:
+ *  delete:
+ *      summary: Delete Ad by ID
+ *      description: Use to delete an advertisement by ID
+ *      produces:
+ *         - application/json
+ *      parameters:
+ *         - in: path
+ *           name: id
+ *           description: ID of advertisement
+ *      responses:
+ *       200:
+ *         description: If the operation succeeded
+ *         schema:
+ *         type: json
  */
 router.delete("/:id", async (req, res, next) => {
 
@@ -136,6 +207,35 @@ router.delete("/:id", async (req, res, next) => {
         
         next(err);
     }
-});
+})
+
+/**
+ * @swagger
+ * definitions:
+ *  Advertisement:
+ *      type: object
+ *      properties:
+ *          name:
+ *              type: string
+ *          type:
+ *              type: string
+ *          price:
+ *              type: integer
+ *          photo:
+ *              type: string
+ *              example: test_image.jpg
+ *          tags:
+ *              type: array
+ *              items:
+ *                  type: string
+ *              example:
+ *                  - work
+ *                  - lifestyle
+ *              enum:
+ *                  - work
+ *                  - lifestyle
+ *                  - motor
+ *                  - mobile
+ */
 
 module.exports = router;

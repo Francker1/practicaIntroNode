@@ -27,6 +27,7 @@ app.use(express.static(path.join(__dirname, "public")));
  */
 app.use("/apiv1/ads", require("./routes/api/ads"));
 app.use("/apiv1/tags", require("./routes/api/tags"));
+app.use("/api-docs", require("./routes/api/api-docs"));
 
 /**
  * Website routes:
